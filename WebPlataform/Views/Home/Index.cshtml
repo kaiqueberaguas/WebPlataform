@@ -1,4 +1,5 @@
-﻿@{
+﻿@*@Model IList<>*@ 
+@{
     ViewData["Title"] = "Home Page";
 }
 <header>
@@ -21,7 +22,7 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
-@*Carrocel de promoções*@
+@*Menu superior*@
 <div>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
         <div class="container">
@@ -46,7 +47,7 @@
         </div>
     </nav>
 </div>
-
+@*Principal*@
 <div class="row">
     <div class="col-3 tn-group-vertical">
         <div class="row">
@@ -99,7 +100,7 @@
         </div>
     </div>
 </div>
-@*implementar regra de desabilidat botão proximo quando não ouver proximo e anterior quando pagina for 1*@
+@*implementar regra de desabilitar botão proximo quando não ouver proximo e anterior quando pagina for 1*@
 @*Somente é ativo o ultimo que eu cliquei*@
 
 <nav aria-label="Page navigation example">
