@@ -423,11 +423,14 @@ $RECYCLE.BIN/
 .idea/
 *.sln.iml
 
+#Build
+*.V2
+*.suo
+*.dll
+*.pdb
 ##
 ## Visual Studio Code
 ##
 .vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
+.vs/*
+
