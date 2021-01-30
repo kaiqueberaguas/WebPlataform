@@ -10,6 +10,5 @@ namespace WebPlataform.Interfaces.Services
         Task<T> Update(T obj);
         Task<T> Create(T obj);
         Task<T> Delete(long code);
-
     }
 }

@@ -1,5 +1,4 @@
-﻿@*@Model IList<>*@ 
-@{
+﻿@{
     ViewData["Title"] = "Home Page";
 }
 <header>
@@ -36,12 +35,6 @@
                     <li class="nav-item">
                         <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Index">Produtos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                    </li>
                 </ul>
             </div>
         </div>
@@ -51,66 +44,76 @@
 <div class="row">
     <div class="col-3 tn-group-vertical">
         <div class="row">
+            @*Menu lateral*@
             <div class="col">
                 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
-                    <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
-                    <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
-                    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
+                    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Categorias-01</a>
+                    <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Categorias-02</a>
+                    <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Categorias-03</a>
+                    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Categorias-04</a>
                 </div>
             </div>
-            @*<div class="col-9">
-                    <div class="tab-content" id="v-pills-tabContent">
-                        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">...</div>
-                        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
-                        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
-                        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
-                    </div>
-                </div>*@
         </div>
     </div>
 
     <div class="col-9">
         <div class="row">
-            @*Colocar isso em um for*@
-            <div class="card" style="width:17rem; margin-bottom:1%; margin-left:1%; padding:1%">
-                <img src="/images/card.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+            @*Area de produtos*@
+            @foreach (var product in Model.Products.Itens)
+            {
+                <div class="card" style="width:17rem; margin-bottom:1%; margin-left:1%; padding:1%">
+                    <img src="/images/@product.Image" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">product.Name</h5>
+                        <p class="card-text">product.Description</p>
+                        <a href="#" class="btn btn-primary">Adicionar ao carrinho</a>
+                    </div>
                 </div>
-            </div>
-            <div class="card" style="width:17rem; margin-bottom:1%; margin-left:1%; padding:1%">
-                <img src="/images/card.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card" style="width:17rem; margin-bottom:1%; margin-left:1%; padding:1%">
-                <img src="/images/card.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
+            }
         </div>
     </div>
 </div>
-@*implementar regra de desabilitar botão proximo quando não ouver proximo e anterior quando pagina for 1*@
-@*Somente é ativo o ultimo que eu cliquei*@
 
 <nav aria-label="Page navigation example">
     <ul class="pagination justify-content-center">
-        <li class="page-item disabled"><a class="page-link " href="#">Previous</a></li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item active"><a class="page-link" href="#">3</a></li>
-        <li class="page-item"><a class="page-link" href="#">4</a></li>
-        <li class="page-item"><a class="page-link" href="#">5</a></li>
-        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+
+        @if (Model.Products.Page >= 1)
+        {
+            <li class="page-item"><a class="page-link " href="Product/Index">Previous</a></li>
+        }
+        else
+        {
+            <li class="page-item disabled"><a class="page-link " href="Product/Index">Previous</a></li>
+        }
+
+        @if (Model.Products.Page >= 2)
+        {
+            <li class="page-item"><a class="page-link" href="">@(Model.Products.Page-1)</a></li>
+        }
+        @if (Model.Products.Page >= 1)
+        {
+            <li class="page-item"><a class="page-link" href="#">@(Model.Products.Page)</a></li>
+        }
+
+        <li class="page-item active"><a class="page-link" href="#">@(Model.Products.Page + 1)</a></li>
+
+        @if (Model.Products.Page <= Model.Products.TotalPages - 1)
+        {
+            <li class="page-item"><a class="page-link" href="#">@(Model.Products.Page + 2)</a></li>
+        }
+
+        @if (Model.Products.Page <= Model.Products.TotalPages - 2)
+        {
+            <li class="page-item"><a class="page-link" href="#">@(Model.Products.Page + 3)</a></li>
+        }
+        @if (Model.Products.Page <= Model.Products.TotalPages - 1)
+        {
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        }
+        else
+        {
+            <li class="page-item disabled"><a class="page-link" href="#">Next</a></li>
+        }
+
     </ul>
 </nav>

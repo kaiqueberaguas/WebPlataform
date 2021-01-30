@@ -1,31 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using WebPlataform.Interfaces.Services;
 using WebPlataform.Models;
+using WebPlataform.Presenters;
 
 namespace WebPlataform.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IProductService _productService;
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IProductService productService, ILogger<HomeController> logger)
         {
+            _productService = productService;
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
+            var products = new ProductsPagePresenter()
+            {
+                Categorys = new List<Category>(),
+                Subcategorys = new List<Subcategory>(),
+                Products = await _productService.GetAll(0, 20, 0001),
+            };
+            return View(products);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

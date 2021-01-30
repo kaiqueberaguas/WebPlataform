@@ -20,7 +20,6 @@ C:\Users\kaiqu\source\repos\WebPlataform\WebPlataform\obj\Debug\netcoreapp3.1\We
 C:\Users\kaiqu\source\repos\WebPlataform\WebPlataform\obj\Debug\netcoreapp3.1\WebPlataform.TagHelpers.output.cache
 C:\Users\kaiqu\source\repos\WebPlataform\WebPlataform\obj\Debug\netcoreapp3.1\WebPlataform.RazorCoreGenerate.cache
 C:\Users\kaiqu\source\repos\WebPlataform\WebPlataform\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\kaiqu\source\repos\WebPlataform\WebPlataform\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\kaiqu\source\repos\WebPlataform\WebPlataform\obj\Debug\netcoreapp3.1\Razor\Views\Product\Index.cshtml.g.cs
 C:\Users\kaiqu\source\repos\WebPlataform\WebPlataform\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\kaiqu\source\repos\WebPlataform\WebPlataform\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
