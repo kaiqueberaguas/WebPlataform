@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using WebPlataform.Models;
+using WebPlataform.Src.Models;
 
-namespace WebPlataform.Presenters
+namespace WebPlataform.Src.Presenters
 {
     public class ProductsPagePresenter
     {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace WebPlataform.Models
+namespace WebPlataform.Src.Models
 {
     public class Pageable<T>
     {
@@ -15,6 +15,13 @@ namespace WebPlataform.Models
             Page = page;
             Size = size;
             TotalPages = (itens.Count - (itens.Count % size)) / size;
+        }
+        public Pageable(int page, int size)
+        {
+            Itens = new List<T>();
+            Page = page;
+            Size = size;
+            TotalPages = (Itens.Count - (Itens.Count % size)) / size;
         }
     }
 }

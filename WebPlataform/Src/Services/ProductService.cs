@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Threading.Tasks;
-using WebPlataform.Interfaces.Services;
-using WebPlataform.Models;
+using WebPlataform.Src.Interfaces.Services;
+using WebPlataform.Src.Models;
 
-namespace WebPlataform.Services
+namespace WebPlataform.Src.Services
 {
     public class ProductService : IProductService
     {
@@ -14,10 +14,10 @@ namespace WebPlataform.Services
 
         public Task<Pageable<Product>> GetAll(int page, int size, long subcategoryCode)
         {
-            throw new NotImplementedException();
+            return Task.Run(() => new Pageable<Product>(page, size));
         }
 
-        [Obsolete("Produtos devem ser buscados pelo codigo da categoria")]
+        [Obsolete("Produtos devem ser buscados pelo codigo da Subcategoria")]
         public Task<Pageable<Product>> GetAll(int page, int size)
         {
             throw new ArgumentNullException();

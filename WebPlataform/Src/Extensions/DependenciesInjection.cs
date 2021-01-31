@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using WebPlataform.Interfaces.Services;
-using WebPlataform.Services;
+using WebPlataform.Src.Interfaces.Services;
+using WebPlataform.Src.Services;
 
-namespace WebPlataform.Extensions
+namespace WebPlataform.Src.Extensions
 {
     public static class DependenciesInjection
     {

@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
-using WebPlataform.Models;
+using WebPlataform.Src.Models;
 
-namespace WebPlataform.Interfaces.Services
+namespace WebPlataform.Src.Interfaces.Services
 {
     public interface IProductService : IBasicCrudService<Product>
     {

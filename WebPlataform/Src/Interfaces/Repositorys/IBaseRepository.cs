@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
-using WebPlataform.Models;
+using WebPlataform.Src.Models;
 
-namespace WebPlataform.Interfaces.Repositorys
+namespace WebPlataform.Src.Interfaces.Repositorys
 {
     public interface IBaseRepository<T> : IDisposable where T : Entity
     {

@@ -1,4 +1,4 @@
-﻿namespace WebPlataform.Models
+﻿namespace WebPlataform.Src.Models
 {
     public abstract class Entity
     {

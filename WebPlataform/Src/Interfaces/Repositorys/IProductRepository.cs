@@ -1,6 +1,6 @@
-﻿using WebPlataform.Models;
+﻿using WebPlataform.Src.Models;
 
-namespace WebPlataform.Interfaces.Repositorys
+namespace WebPlataform.Src.Interfaces.Repositorys
 {
     public interface IProductRepository : IBaseRepository<Product>
     {

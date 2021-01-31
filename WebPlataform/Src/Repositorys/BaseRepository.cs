@@ -1,11 +1,10 @@
 ﻿using System.Threading.Tasks;
-using WebPlataform.Interfaces.Repositorys;
-using WebPlataform.Models;
+using WebPlataform.Src.Interfaces.Repositorys;
 
-namespace WebPlataform.Repositorys
+namespace WebPlataform.Src.Repositorys
 {
-    public class BaseRepository<T> : IBaseRepository<T> where T : Entity
-    {
+    //public class BaseRepository<T> : IBaseRepository<T> where T : Entity
+    //{
 
         //protected readonly StoreContext _storeContext;
         //public BaseRepository(StoreContext storeContext)
@@ -57,40 +56,40 @@ namespace WebPlataform.Repositorys
         //        await _storeContext.SaveChangesAsync();
         //    }
         //    return obj;
-        //}
-        public Task<T> Delete(long id)
-        {
-            throw new System.NotImplementedException();
-        }
+    //    //}
+    //    public Task<T> Delete(long id)
+    //    {
+    //        throw new System.NotImplementedException();
+    //    }
 
-        public void Dispose()
-        {
-            throw new System.NotImplementedException();
-        }
+    //    public void Dispose()
+    //    {
+    //        throw new System.NotImplementedException();
+    //    }
 
-        public Task<Pageable<T>> GetAll(int page, int size)
-        {
-            throw new System.NotImplementedException();
-        }
+    //    public Task<Pageable<T>> GetAll(int page, int size)
+    //    {
+    //        throw new System.NotImplementedException();
+    //    }
 
-        public Task<T> GetByCode(long Code)
-        {
-            throw new System.NotImplementedException();
-        }
+    //    public Task<T> GetByCode(long Code)
+    //    {
+    //        throw new System.NotImplementedException();
+    //    }
 
-        public Task<T> GetById(long Id)
-        {
-            throw new System.NotImplementedException();
-        }
+    //    public Task<T> GetById(long Id)
+    //    {
+    //        throw new System.NotImplementedException();
+    //    }
 
-        public Task<T> Insert(T obj)
-        {
-            throw new System.NotImplementedException();
-        }
+    //    public Task<T> Insert(T obj)
+    //    {
+    //        throw new System.NotImplementedException();
+    //    }
 
-        public Task<T> Update(T obj)
-        {
-            throw new System.NotImplementedException();
-        }
-    }
+    //    public Task<T> Update(T obj)
+    //    {
+    //        throw new System.NotImplementedException();
+    //    }
+    //}
 }

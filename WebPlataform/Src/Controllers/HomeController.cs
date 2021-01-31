@@ -3,11 +3,11 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using WebPlataform.Interfaces.Services;
-using WebPlataform.Models;
-using WebPlataform.Presenters;
+using WebPlataform.Src.Interfaces.Services;
+using WebPlataform.Src.Models;
+using WebPlataform.Src.Presenters;
 
-namespace WebPlataform.Controllers
+namespace WebPlataform.Src.Controllers
 {
     public class HomeController : Controller
     {

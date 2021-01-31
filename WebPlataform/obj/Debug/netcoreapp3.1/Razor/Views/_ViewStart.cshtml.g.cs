@@ -21,13 +21,13 @@ using WebPlataform;
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\kaiqu\source\repos\WebPlataform\WebPlataform\Views\_ViewImports.cshtml"
-using WebPlataform.Models;
+using WebPlataform.Src.Models;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"77a2804b95fd303a20a56ec194ea6ca59278fafa", @"/Views/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4ae20b45b39d6a2b97a5c0a85d07567c701d595e", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b38f988757d58c747d5bde6d30a9741839b51a90", @"/Views/_ViewImports.cshtml")]
     public class Views__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998
