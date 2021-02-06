@@ -1,0 +1,55 @@
+﻿@model ProductsPagePresenter
+
+<h1>Gerenciador</h1>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Codigo</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Descrição</th>
+            <th scope="col">Quantidade</th>
+            <th scope="col">Preço</th>
+            <th scope="col"></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>12345432</td>
+            <td>Mock</td>
+            <td>Produto mocado de teste</td>
+            <td>3</td>
+            <td>R$30,00</td>
+            <td>
+                <button type="button" class="btn btn-secondary" asp-action="Put" asp-route-id="codigo">Editar</button>
+                <button type="button" class="btn btn-secondary" asp-action="Disable" asp-route-id="codigo">@updatemessage(null)</button>
+                <button type="button" class="btn btn-danger" asp-action="Delete" asp-route-id="codigo">Excluir</button>
+            </td>
+        </tr>
+        <script>console.log(@Model.Products.Itens.Count)</script>
+        @foreach (var product in Model.Products.Itens)
+        {
+            <tr>
+                <td>@product.Code</td>
+                <td>@product.Name</td>
+                <td>@product.Description</td>
+                <td>@product.Quantity</td>
+                <td>R$@product.Price</td>
+                <td>
+                    <button type="button" class="btn btn-secondary" asp-action="Put" asp-route-id="codigo">Editar</button>
+                    <button type="button" class="btn btn-secondary" asp-action="Disable" asp-route-id="codigo">@updatemessage(product)</button>
+                    <button type="button" class="btn btn-danger" asp-action="Delete" asp-route-id="codigo">Excluir</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@functions{
+
+    private string updatemessage(Product product)
+    {
+        return (product != null && product.IsActive) ? "Desativar" : "Ativar";
+    }
+}

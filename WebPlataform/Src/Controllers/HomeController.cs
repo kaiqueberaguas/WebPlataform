@@ -1,34 +1,23 @@
-﻿using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using WebPlataform.Src.Interfaces.Services;
-using WebPlataform.Src.Models;
-using WebPlataform.Src.Presenters;
+using WebPlataform.Src.ViewModels;
 
 namespace WebPlataform.Src.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IProductService _productService;
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(IProductService productService, ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger)
         {
-            _productService = productService;
             _logger = logger;
         }
 
         public async Task<IActionResult> Index()
         {
-            var products = new ProductsPagePresenter()
-            {
-                Categorys = new List<Category>(),
-                Subcategorys = new List<Subcategory>(),
-                Products = await _productService.GetAll(0, 20, 0001),
-            };
-            return View(products);
+            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
