@@ -24,11 +24,11 @@ namespace WebPlataform.Src.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            var products = new ProductsPagePresenter()
+            var products = new ProductsPageViewModel()
             {
                 Categorys = new List<Category>(),
                 Subcategorys = new List<Subcategory>(),
-                Products = new Pageable<Product>(1, 20)
+                Products = new Pageable<Product>(0,1, 20)
                 //Products = await _productService.GetAll(0, 20, 0001),
             };
             return View(products);
@@ -37,11 +37,10 @@ namespace WebPlataform.Src.Controllers
         [HttpGet()]
         public async Task<IActionResult> Gerenciador([FromRoute]string categoryId)
         {
-            var products = new ProductsPagePresenter()
+            var products = new ProductsPageViewModel()
             {
                 Categorys = new List<Category>(),
                 Subcategorys = new List<Subcategory>(),
-                //Products = new Pageable<Product>(1, 20)
                 Products = await _productService.GetAll(0, 20, 0001),
             };
             return View(products);

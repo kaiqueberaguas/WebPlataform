@@ -32,7 +32,7 @@ namespace WebPlataform.Src.Services
                     Quantity = 3
                 }
             };
-            return Task.Run(() => new Pageable<Product>(products, page, size));
+            return Task.Run(() => new Pageable<Product>(products,70 ,page, size));
         }
 
         [Obsolete("Produtos devem ser buscados pelo codigo da Subcategoria")]

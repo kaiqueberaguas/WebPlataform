@@ -1,6 +1,4 @@
-﻿@*@page*@
-
-
+﻿@model ProductsPageViewModel
 
 @*Carrocel de promoção*@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -54,7 +52,7 @@
     <div class="col-9">
         <div class="row">
             @*Area de produtos*@
-            
+
             @foreach (var product in Model.Products.Itens)
             {
                 <div class="card" style="width:17rem; margin-bottom:1%; margin-left:1%; padding:1%">
@@ -70,7 +68,7 @@
     </div>
 </div>
 @*Paginação*@
-@*<nav aria-label="Page navigation example">
+<nav aria-label="Page navigation example">
     <ul class="pagination justify-content-center">
 
         @if (Model.Products.Page >= 1)
@@ -112,7 +110,7 @@
         }
 
     </ul>
-</nav>*@
+</nav>
 
 @{
 }

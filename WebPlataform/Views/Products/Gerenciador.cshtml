@@ -1,4 +1,4 @@
-﻿@model ProductsPagePresenter
+﻿@model ProductsPageViewModel
 
 <h1>Gerenciador</h1>
 
@@ -27,7 +27,6 @@
                 <button type="button" class="btn btn-danger" asp-action="Delete" asp-route-id="codigo">Excluir</button>
             </td>
         </tr>
-        <script>console.log(@Model.Products.Itens.Count)</script>
         @foreach (var product in Model.Products.Itens)
         {
             <tr>
@@ -45,6 +44,45 @@
         }
     </tbody>
 </table>
+
+@*Paginação*@
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        @if (Model.Products.Page >= 1)
+        {
+            <li class="page-item"><a class="page-link " href="Product/Index">Previous</a></li>
+        }
+        else
+        {
+            <li class="page-item disabled"><a class="page-link " href="Product/Index">Previous</a></li>
+        }
+
+        @if (Model.Products.Page >= 2)
+        {
+            <li class="page-item"><a class="page-link" href="">@(Model.Products.Page-1)</a></li>
+        }
+        @if (Model.Products.Page >= 1)
+        {
+            <li class="page-item"><a class="page-link" href="#">@(Model.Products.Page)</a></li>
+        }
+
+        <li class="page-item active"><a class="page-link" href="#">@(Model.Products.Page + 1)</a></li>
+
+        @if (Model.Products.Page <= Model.Products.TotalPages - 1)
+        {
+            <li class="page-item"><a class="page-link" href="#">@(Model.Products.Page + 2)</a></li>
+        }
+
+        @if (Model.Products.Page <= Model.Products.TotalPages - 1)
+        {
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        }
+        else
+        {
+            <li class="page-item disabled"><a class="page-link" href="#">Next</a></li>
+        }
+    </ul>
+</nav>
 
 @functions{
 

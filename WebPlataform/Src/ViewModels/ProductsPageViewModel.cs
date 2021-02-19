@@ -3,13 +3,13 @@ using WebPlataform.Src.Models;
 
 namespace WebPlataform.Src.ViewModels
 {
-    public class ProductsPagePresenter
+    public class ProductsPageViewModel
     {
         public string TitlePage { get; set; }
 
         public IList<Category> Categorys { get; set; }
         public IList<Subcategory> Subcategorys { get; set; }
-        public Pageable<Product> Products { get; set; } = new Pageable<Product>(new List<Product>(), 0, 20);
+        public Pageable<Product> Products { get; set; } = new Pageable<Product>(new List<Product>(),0, 0, 20);
 
     }
 }
