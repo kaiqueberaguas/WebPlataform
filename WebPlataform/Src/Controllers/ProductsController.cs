@@ -35,7 +35,7 @@ namespace WebPlataform.Src.Controllers
         }
 
         [HttpGet()]
-        public async Task<IActionResult> Gerenciador([FromRoute]string categoryId)
+        public async Task<IActionResult> Administractive([FromRoute]string categoryId)
         {
             var products = new ProductsPageViewModel()
             {

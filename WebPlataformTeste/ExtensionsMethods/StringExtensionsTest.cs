@@ -1,6 +1,6 @@
 using Microsoft.Extensions.Logging;
 using System;
-using webApi.src.extensions;
+using WebPlataform.Src.Extensions;
 using Xunit;
 
 namespace WebPlataformTeste
