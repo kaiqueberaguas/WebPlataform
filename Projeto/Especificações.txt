@@ -1,0 +1,18 @@
+Loja virtual com Aspnet Mvc 
+
+Pagina de produtos
+    -Carrocel de produtos em oferta
+    -Ao iniciar a tela deve carregar os produtos em promoção
+
+Pagina de gerenciamento de produtos
+    -Permitir Cadastrar, deletar, desativar e editar produtos
+    -Permitir fazer upload de imagens dos produtos e promoções
+
+Pagina de cadastro de usuario
+Formas de autenticação
+Modelo de pedido
+Integrações com api de pagamento
+Feedback com o cliente(Compra, acompanhamento do pedido, historico de compras)
+
+Sistema de pedidos
+Log e monitoramento da apliçaão
