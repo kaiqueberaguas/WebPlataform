@@ -1,14 +1,22 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using System;
+using System.Collections.Generic;
 
 namespace WebPlataform.Src.Models
 {
     public class Subcategory : Entity
     {
-        //private readonly ILogger _logger;
+        public override Guid Id { get => base.Id;}
+        public string Name { get; set; }
+        //public Guid CategoryId { get; set; }
+        public Category Category { get; set; }
+        public List<Product> Products { get; set; }
+        public override bool IsActive { get => base.IsActive;}
+        public override DateTime LastUpdate { get => base.LastUpdate; set => base.LastUpdate = value; }
+        public override DateTime InclusionDate { get => base.InclusionDate; }
 
-        //public Subcategory(ILogger logger) : base(logger)
-        //{
-        //    _logger = logger;
-        //}
+        public Subcategory(string name,bool isActive) : base(isActive)
+        {
+            Name = name;
+        }
     }
 }
