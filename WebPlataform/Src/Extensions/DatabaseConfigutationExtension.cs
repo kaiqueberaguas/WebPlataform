@@ -15,7 +15,7 @@ namespace WebPlataform.Src.Extensions
             #region database_configuration
             var builder = new SqlConnectionStringBuilder(configuration.GetConnectionString("SqlServerConnectionString"))
             {
-                //Password = configuration["SECRET_DATABASE"]
+                Password = configuration["SECRET_DATABASE"]
             };
             #endregion
 
