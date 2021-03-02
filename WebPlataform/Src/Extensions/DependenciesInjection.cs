@@ -10,7 +10,7 @@ namespace WebPlataform.Src.Extensions
         {
 
             #region Services
-            services.AddScoped<IProductService, ProductService>();
+            // services.AddScoped<IProductService, ProductService>();
             #endregion
         }
     }
