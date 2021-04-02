@@ -86,6 +86,10 @@
 
 @functions{
 
+    //public List<Product> Products = (Model.Products.Itens != null) ? Model.Products.Itens : new List<Product>();
+
+
+
     private string updatemessage(Product product)
     {
         return (product != null && product.IsActive) ? "Desativar" : "Ativar";

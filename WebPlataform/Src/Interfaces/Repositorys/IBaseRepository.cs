@@ -8,10 +8,11 @@ namespace WebPlataform.Src.Interfaces.Repositorys
     public interface IBaseRepository<T> : IDisposable where T : Entity
     {
 
-        Task<T> GetById(Guid Id);
+        Task<T> GetById(string Id);
+        Task<Pageable<T>> GetAll(int page, int size);
         Task<Pageable<T>> GetAll(int page, int size, Order order, string field);
         Task<T> Update(T obj);
         Task<T> Insert(T obj);
-        Task<T> Delete(Guid id);
+        Task<T> Delete(string id);
     }
 }

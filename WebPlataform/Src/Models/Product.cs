@@ -9,7 +9,10 @@ namespace WebPlataform.Src.Models
         public string Description { get; set; }
         public string Information { get; set; }
         public decimal Price { get; set; }
-        public string Image { get; set; }
+        private string _image;
+        public string Image { get => _image is null ? "ImageNotFound.png" : _image; set
+            { _image = value; }
+        }
         public int Quantity { get; set; }
         //public Guid SubcategoryId { get; set; }
         public Subcategory Subcategory { get; set; }
@@ -21,7 +24,7 @@ namespace WebPlataform.Src.Models
         {
         }
 
-        public Product(string name, string description, string information, decimal price, 
+        public Product(string name, string description, string information, decimal price,
             string image, int quantity, Subcategory subcategory, bool isActive) : base(isActive)
         {
             Name = name;
