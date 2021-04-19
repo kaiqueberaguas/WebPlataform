@@ -22,11 +22,13 @@ namespace WebPlataform.Src.Repositories
         public async Task<Pageable<Product>> GetAll(int page, int size, Order order, string field, string subcategoryCode)
         {
             _logger.LogTrace($"Parametros de busca: page:{page},size{size},order{order},field{field} ");
-            Pageable<Product> response = null;
-            
-                if (page <= 0) page = 1;
-                if (size <= 0) size = 1;
-                List<Product> list = null;
+
+            if (page <= 0) page = 1;
+            if (size <= 0) size = 1;
+            List<Product> list = new List<Product>();
+            int count = 0;
+            try
+            {
                 if (order.ToString() == "DESC")
                 {
                     list = await _storeContext.Products.OrderByDescending(c => field).Skip((page - 1) * size).Take(size).ToListAsync();
@@ -35,10 +37,13 @@ namespace WebPlataform.Src.Repositories
                 {
                     list = await _storeContext.Products.OrderBy(c => field).Skip((page - 1) * size).Take(size).ToListAsync();
                 }
-                var count = await _storeContext.Products.CountAsync();
-                response = new Pageable<Product>(list, count, page, size);
-            
-            return response;
+                count = await _storeContext.Products.CountAsync();
+            }
+            catch(Exception e)
+            {
+                _logger.LogError($"Erro ao consultar produto: {e.Message}");
+            }
+            return new Pageable<Product>(list, count, page, size);
         }
     }
 }

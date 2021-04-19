@@ -32,7 +32,7 @@ namespace WebPlataform.Src.Repositories
         }
         public virtual async Task<Pageable<T>> GetAll(int page, int size, Order order, string field)
         {
-            _logger.LogTrace($"Parametros de busca: page:{page},size{size},order{order.ToString()},field{field} ");
+            _logger.LogTrace($"Parametros de busca: page:{page},size{size},order{order},field{field} ");
             Pageable<T> response = null;
             try
             {
@@ -47,17 +47,15 @@ namespace WebPlataform.Src.Repositories
                 {
                     list = await _storeContext.Set<T>().OrderBy(c => field).Skip((page - 1) * size).Take(size).ToListAsync();
                 }
-                //var list = await _storeContext.Set<T>().Skip((page - 1) * size).Take(size).ToListAsync();
                 var count = await _storeContext.Set<T>().CountAsync();
                 response = new Pageable<T>(list, count, page, size);
             }
             catch (Exception e)
             {
-                _logger.LogError($"Erro ao consultar produto paginado: {e.Message}");
+                _logger.LogError($"Erro na consulta paginada: {e.Message}");
             }
             return response;
         }
-
         public virtual async Task<Pageable<T>> GetAll(int page, int size)
         {
             _logger.LogTrace($"Parametros de busca: page:{page},size{size}");
@@ -72,11 +70,10 @@ namespace WebPlataform.Src.Repositories
             }
             catch (Exception e)
             {
-                _logger.LogError($"Erro ao consultar produto paginado: {e.Message}");
+                _logger.LogError($"Erro na consulta paginada: {e.Message}");
             }
             return response;
         }
-
         public virtual async Task<T> Insert(T obj)
         {
             //    obj.PrepareCreateRecord();
